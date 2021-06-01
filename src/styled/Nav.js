@@ -27,7 +27,7 @@ export default function Nav() {
           <a href="/resources">Resources</a>
           <hr />
           <a href="/login">Login</a>
-          <Button primary round>
+          <Button primary round maxwidth>
             Sign Up
           </Button>
         </div>
@@ -37,7 +37,7 @@ export default function Nav() {
 }
 
 const Wrapper = styled.div`
-  padding: 0 6rem;
+  padding: 0 10rem;
   padding-top: 2rem;
   display: flex;
   align-items: center;
@@ -90,13 +90,13 @@ const Wrapper = styled.div`
     }
     .options {
       display: none;
-      padding: 2rem 4rem !important;
+      padding: 2rem !important;
       right: 0;
       border-radius: 0.6rem;
       flex-direction: column;
       position: absolute;
       background-color: #3b3054;
-      width: max-content;
+      width: 12rem;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       padding: 12px 16px;
       z-index: 1;
