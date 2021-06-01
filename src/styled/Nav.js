@@ -9,9 +9,9 @@ export default function Nav() {
     <Wrapper>
       <div className="routes">
         <img alt="Shortly" src={logo} />
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
-        <a href="#">Resources</a>
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/resources">Resources</a>
       </div>
       <div className="buttons">
         <Button secondary>Login</Button>
@@ -22,11 +22,11 @@ export default function Nav() {
       <div className="dropdown">
         <FiMenu className="menuico" />
         <div className="options">
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <a href="#">Resources</a>
+          <a href="/features">Features</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/resources">Resources</a>
           <hr />
-          <a href="#">Login</a>
+          <a href="/login">Login</a>
           <Button primary round>
             Sign Up
           </Button>
@@ -37,14 +37,16 @@ export default function Nav() {
 }
 
 const Wrapper = styled.div`
+  padding: 0 6rem;
   padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100%;
   a {
     color: #bfbfbf;
     font-weight: 800;
+    font-size: 18px;
     text-decoration: none;
     :hover {
       color: #34313d;
@@ -117,5 +119,8 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
     }
+  }
+  @media (max-width: 750px) {
+    padding: 0 2rem;
   }
 `;
