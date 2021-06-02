@@ -40,6 +40,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding: 0.5rem 2rem;
   align-items: center;
+  box-shadow: 0px 0px 48px #0000000b;
   div {
     display: flex;
     align-items: center;

@@ -72,8 +72,8 @@ const Wrapper = styled.div`
   /* lower footer */
   .lowerFooter {
     background-color: #232127;
-    padding: 2rem;
-    padding-bottom: 5rem;
+    padding: 4rem 2rem;
+    padding-bottom: 6rem;
     min-height: 10rem;
     color: #ffffff;
     display: flex;
@@ -81,7 +81,7 @@ const Wrapper = styled.div`
     align-items: flex-start;
   }
   .logo {
-    width: 25%;
+    margin-right: 10%;
     font-weight: 800;
     font-size: 2rem;
   }
@@ -118,7 +118,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 800px) {
     .logo {
-      width: 20%;
+      margin-right: 5%;
     }
   }
   @media (max-width: 750px) {
@@ -127,7 +127,7 @@ const Wrapper = styled.div`
       align-items: center;
     }
     .logo {
-      width: max-content;
+      margin-right: 0;
       margin-bottom: 1rem;
     }
     .optionsCol {

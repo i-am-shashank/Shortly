@@ -53,6 +53,7 @@ const Wrapper = styled.div`
   background-size: 100% 100%;
   display: flex;
   align-items: center;
+  box-shadow: 0px 0px 48px #0000000b;
   .inpsec {
     display: flex;
     flex-direction: column;
