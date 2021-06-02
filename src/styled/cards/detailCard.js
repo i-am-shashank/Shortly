@@ -60,6 +60,10 @@ const Wrapper = styled.div`
     .ico {
       height: 3rem;
       width: 3rem;
+      top: -2rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
     }
   }
   @media (max-width: 1100px) {

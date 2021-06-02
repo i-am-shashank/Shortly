@@ -128,7 +128,7 @@ const Wrapper = styled.div`
     .cardsCtr {
       flex-direction: column;
       width: max-content;
-      height: 56rem;
+      height: 58rem;
       margin-bottom: 4rem;
     }
     .line {
