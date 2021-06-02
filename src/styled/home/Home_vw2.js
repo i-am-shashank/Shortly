@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../Button";
 import InpCard from "../cards/InpCard";
 import LinkCard from "../cards/LinkCard";
 
@@ -10,6 +9,11 @@ export default function Home_vw2() {
       <div className="vw_2">
         <InpCard />
         <LinkCard />
+        <p className="bigtxt">Advanced Statistics</p>
+        <p className="smalltxt">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard
+        </p>
       </div>
     </Wrapper>
   );
@@ -17,10 +21,21 @@ export default function Home_vw2() {
 
 const Wrapper = styled.div`
   position: relative;
+  text-align: center;
   .vw_2 {
     min-height: 100vh;
+    width: 100vw;
     background-color: #eff1f7;
     padding: 0 10rem;
+  }
+  .bigtxt {
+    font-weight: 800;
+    font-size: 2rem;
+    color: #34313d;
+  }
+  .smalltxt {
+    font-size: 18px;
+    color: #bfbfbf;
   }
   /* media queries */
 
@@ -28,11 +43,5 @@ const Wrapper = styled.div`
     .vw_2 {
       padding: 0 2rem;
     }
-  }
-  @media (max-width: 1350px) {
-  }
-  @media (max-width: 1150px) {
-  }
-  @media (max-width: 1150px) {
   }
 `;

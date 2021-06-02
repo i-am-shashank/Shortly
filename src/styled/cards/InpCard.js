@@ -101,8 +101,4 @@ const Wrapper = styled.div`
       margin-top: 0.5rem;
     }
   }
-  @media (max-width: 1150px) {
-  }
-  @media (max-width: 1150px) {
-  }
 `;

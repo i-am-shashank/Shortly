@@ -6,7 +6,8 @@ export default function Button(props) {
 }
 
 const Wrapper = styled.button`
-  background-color: ${(props) => (props.primary ? "#2acfcf" : "transparent")};
+  background-color: ${(props) =>
+    props.primary ? (props.voilet ? "#3b3054" : "#2acfcf") : "transparent"};
   color: ${(props) => (props.primary ? "#ffffff" : "#bfbfbf")};
   width: ${(props) => (props.maxwidth ? "100%" : "max-content")};
   border: none;
@@ -18,7 +19,7 @@ const Wrapper = styled.button`
   border-radius: ${(props) => (props.round ? "5rem" : "0.4rem")};
   :hover {
     color: ${(props) => props.secondary && "#34313d"};
-    background-color: ${(props) => props.primary && "#62D8D8"};
+    background-color: ${(props) => props.primary && !props.voilet && "#62D8D8"};
   }
   @media (max-width: 1350px) {
     font-size: ${(props) => props.fbig && "18px"};
