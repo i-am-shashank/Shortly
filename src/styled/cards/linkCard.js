@@ -4,23 +4,27 @@ import Button from "../Button";
 
 export default function LinkCard({ orignalLink, shortLink }) {
   const [copied, setcopied] = useState(false);
-  const onClickHandler = (e) => {
+
+  function copyToClipboard() {
     setcopied(true);
-    // functionality to be added
-  };
+    var textField = document.createElement("textarea");
+    textField.innerText = shortLink;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand("copy");
+    textField.remove();
+  }
   return (
     <Wrapper>
-      <p>{orignalLink || "https://asdasdasda.com"}</p>
+      <p>{orignalLink}</p>
       <div>
-        <a href={shortLink || "https://asdasdasda.com"}>
-          {shortLink || "https://asdasdasda.com"}
-        </a>
+        <a href={shortLink}>{shortLink}</a>
         {copied ? (
           <Button voilet primary>
             Copied!
           </Button>
         ) : (
-          <Button onClick={onClickHandler} primary>
+          <Button onClick={copyToClipboard} primary>
             Copy
           </Button>
         )}

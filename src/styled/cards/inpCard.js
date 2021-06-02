@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import Button from "../Button";
 import designSvg from "../../assets/bg-shorten-desktop.svg";
 
-export default function InpCard() {
+export default function InpCard({ setlinksgenerated, linksgenerated }) {
   const [errmsg, seterrmsg] = useState("");
   const [inputval, setinputval] = useState("");
+  const [loading, setloading] = useState(false);
+  const ENDPOINT = "https://api.shrtco.de/v2/shorten";
+  async function fetchData() {
+    try {
+      setloading(true);
+      const res = await axios.get(`${ENDPOINT}?url=${inputval}`);
+      setlinksgenerated([...linksgenerated, res.data.result]);
+      setloading(false);
+    } catch (err) {
+      seterrmsg("please enter a valid url");
+    }
+  }
   const onChangeHandler = (e) => {
     setinputval(e.target.value);
   };
@@ -13,9 +26,11 @@ export default function InpCard() {
     e.preventDefault();
     !inputval && seterrmsg("please add a link");
     errmsg && inputval && seterrmsg("");
+    fetchData();
   };
   return (
     <Wrapper>
+      {/* {loading && <div className="loader">loading</div>} */}
       <form className="form">
         <div className="inpsec">
           <input
@@ -77,6 +92,7 @@ const Wrapper = styled.div`
   }
   .errmsg {
     margin: 0;
+    text-align: left;
     color: #e6686b;
   }
   @media (max-width: 750px) {

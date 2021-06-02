@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import InpCard from "../cards/inpCard";
 import LinkCard from "../cards/linkCard";
@@ -25,11 +25,17 @@ const data = [
   },
 ];
 export default function Home_vw2() {
+  const [linksgenerated, setlinksgenerated] = useState([]);
   return (
     <Wrapper>
       <div className="vw_2">
-        <InpCard />
-        <LinkCard />
+        <InpCard
+          setlinksgenerated={setlinksgenerated}
+          linksgenerated={linksgenerated}
+        />
+        {linksgenerated.map((obj) => (
+          <LinkCard orignalLink={obj.original_link} shortLink={obj.full_short_link} />
+        ))}
         <p className="bigtxt">Advanced Statistics</p>
         <p className="smalltxt">
           Track how your links are performing across the web with our advanced
@@ -56,6 +62,9 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   .vw_2 {
+    box-shadow: 0px 4rem 0px 1px rgba(255, 255, 255, 1) inset;
+    -webkit-box-shadow: 0px 4rem 0px 1px rgba(255, 255, 255, 1) inset;
+    -moz-box-shadow: 0px 4rem 0px 1px rgba(255, 255, 255, 1) inset;
     min-height: 100vh;
     width: 100vw;
     background-color: #eff1f7;
@@ -98,6 +107,12 @@ const Wrapper = styled.div`
     .bigtxt {
       font-size: 1.6rem;
     }
+  }
+  @media (max-width: 950px) {
+    .vw_2 {
+    box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
+    -webkit-box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
+    -moz-box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
   }
   @media (max-width: 1100px) {
     .vw_2 {
