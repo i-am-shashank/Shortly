@@ -34,7 +34,10 @@ export default function Home_vw2() {
           linksgenerated={linksgenerated}
         />
         {linksgenerated.map((obj) => (
-          <LinkCard orignalLink={obj.original_link} shortLink={obj.full_short_link} />
+          <LinkCard
+            orignalLink={obj.original_link}
+            shortLink={obj.full_short_link}
+          />
         ))}
         <p className="bigtxt">Advanced Statistics</p>
         <p className="smalltxt">
@@ -110,9 +113,10 @@ const Wrapper = styled.div`
   }
   @media (max-width: 950px) {
     .vw_2 {
-    box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
-    -webkit-box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
-    -moz-box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
+      box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
+      -webkit-box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
+      -moz-box-shadow: 0px 6rem 0px 1px rgba(255, 255, 255, 1) inset;
+    }
   }
   @media (max-width: 1100px) {
     .vw_2 {

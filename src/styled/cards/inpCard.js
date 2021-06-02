@@ -1,14 +1,15 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import Button from "../Button";
 import designSvg from "../../assets/bg-shorten-desktop.svg";
 
+const ENDPOINT = "https://api.shrtco.de/v2/shorten";
+
 export default function InpCard({ setlinksgenerated, linksgenerated }) {
   const [errmsg, seterrmsg] = useState("");
   const [inputval, setinputval] = useState("");
   const [loading, setloading] = useState(false);
-  const ENDPOINT = "https://api.shrtco.de/v2/shorten";
   async function fetchData() {
     try {
       setloading(true);
@@ -30,7 +31,6 @@ export default function InpCard({ setlinksgenerated, linksgenerated }) {
   };
   return (
     <Wrapper>
-      {/* {loading && <div className="loader">loading</div>} */}
       <form className="form">
         <div className="inpsec">
           <input
@@ -40,15 +40,21 @@ export default function InpCard({ setlinksgenerated, linksgenerated }) {
           ></input>
           <p className="errmsg">{errmsg}</p>
         </div>
-        <Button
-          type="submit"
-          primary
-          big
-          value={inputval}
-          onClick={onClickHandler}
-        >
-          Shorten It!
-        </Button>
+        {loading ? (
+          <Button type="submit" primary big disabled>
+            Please wait..
+          </Button>
+        ) : (
+          <Button
+            type="submit"
+            primary
+            big
+            value={inputval}
+            onClick={onClickHandler}
+          >
+            Shorten It!
+          </Button>
+        )}
       </form>
     </Wrapper>
   );
@@ -69,6 +75,14 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   box-shadow: 0px 0px 48px #0000000b;
+  .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0000002a;
+    z-index: 9;
+    color: white;
+  }
   .inpsec {
     display: flex;
     flex-direction: column;

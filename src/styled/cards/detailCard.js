@@ -6,7 +6,7 @@ export default function detailCard(props) {
   return (
     <Wrapper {...props}>
       <div className="ico">
-        <img src={ico} />
+        <img alt="" src={ico} />
       </div>
       <p className="head">{head}</p>
       <p className="desc">{desc}</p>
