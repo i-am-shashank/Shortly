@@ -44,4 +44,9 @@ const Wrapper = styled.div`
       padding: 0 2rem;
     }
   }
+  @media (max-width: 450px) {
+    .bigtxt{
+      font-size: 1.6rem;
+    }
+  }
 `;
